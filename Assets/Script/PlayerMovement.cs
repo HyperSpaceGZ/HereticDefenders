@@ -5,28 +5,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerInput playerInput;
+    
     public Vector2 movement;
     public Rigidbody2D rb;
     public int speed;
 
+    public PlayerInputs playerInputActions;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-    
-    private void OnMovement(InputValue value)
-    {
-        movement = value.Get<Vector2>();
+        playerInput = GetComponent<PlayerInput>();
+
+        
+        playerInputActions = new PlayerInput();
+        playerInputActions.Player.Enabled();
+        playerInputActions.Player.Movement.performed += MovementXY;
     }
 
     private void Update()
     {
         LookAtMouse();
-    }
-
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 
     private void LookAtMouse()
@@ -35,4 +35,8 @@ public class PlayerMovement : MonoBehaviour
         transform.up = (Vector2)MousePosition - new Vector2(transform.position.x, transform.position.y);
     }
 
+    private void MovementXY()
+    {
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
 }
