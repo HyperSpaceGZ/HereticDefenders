@@ -11,22 +11,28 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public int speed;
 
-    public PlayerInputs playerInputActions;
+    public ActionController playerInputActions;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
 
-        
-        playerInputActions = new PlayerInput();
-        playerInputActions.Player.Enabled();
+        playerInputActions = new ActionController();
+        playerInputActions.Player.Enable();
         playerInputActions.Player.Movement.performed += MovementXY;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        movement = playerInputActions.Player.Movement.ReadValue<Vector2>();
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         LookAtMouse();
+    }
+    private void MovementXY(InputAction.CallbackContext context)
+    {
+        movement = context.ReadValue<Vector2>();
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 
     private void LookAtMouse()
@@ -35,8 +41,5 @@ public class PlayerMovement : MonoBehaviour
         transform.up = (Vector2)MousePosition - new Vector2(transform.position.x, transform.position.y);
     }
 
-    private void MovementXY()
-    {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-    }
+
 }
