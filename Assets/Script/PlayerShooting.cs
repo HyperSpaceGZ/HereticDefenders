@@ -24,9 +24,20 @@ public class PlayerShooting : MonoBehaviour
 
     private void OnShoot(InputAction.CallbackContext context)
     {
-        GameObject bulletclone = Instantiate(bulletprefab, spawnposition.position, spawnposition.rotation);
-        Rigidbody2D rb = bulletclone.GetComponent<Rigidbody2D>();
-        rb.AddRelativeForce(Vector3.up * force, ForceMode2D.Impulse);
-        Destroy(bulletclone, lifetime);
+        GameObject bulletClone = ObjectPooling.SharedInstance.GetPooledObject(1);
+        if (bulletClone != null )
+        {
+            bulletClone.transform.position = spawnposition.position;
+            bulletClone.transform.rotation = spawnposition.rotation;
+
+            
+            bulletClone.SetActive(true);
+
+            Rigidbody2D rb = bulletClone.GetComponent<Rigidbody2D>();
+            rb.AddRelativeForce(Vector3.up * force, ForceMode2D.Impulse);
+            
+
+        }
+        
     }
 }
