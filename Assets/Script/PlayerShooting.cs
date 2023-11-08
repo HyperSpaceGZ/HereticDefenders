@@ -30,13 +30,12 @@ public class PlayerShooting : MonoBehaviour
             bulletClone.transform.position = spawnposition.position;
             bulletClone.transform.rotation = spawnposition.rotation;
 
-            
             bulletClone.SetActive(true);
 
             Rigidbody2D rb = bulletClone.GetComponent<Rigidbody2D>();
             rb.AddRelativeForce(Vector3.up * force, ForceMode2D.Impulse);
-            
 
+            Debug.Log("SHOOT");
         }
         
     }

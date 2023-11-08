@@ -12,10 +12,8 @@ public class Bullet : MonoBehaviour
         PassTime += Time.deltaTime; 
         if (PassTime >= lifeTime)
         {
-            lifeTime = PassTime;
+            PassTime = 0.0f;
             gameObject.SetActive(false);
-            
-
         }
     }
 }
