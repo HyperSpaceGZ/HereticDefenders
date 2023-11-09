@@ -12,8 +12,18 @@ public class Bullet : MonoBehaviour
         PassTime += Time.deltaTime; 
         if (PassTime >= lifeTime)
         {
-            PassTime = 0.0f;
-            gameObject.SetActive(false);
+            DestroyBullet();
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        DestroyBullet();
+    }
+
+    private void DestroyBullet()
+    {
+        PassTime = 0.0f;
+        gameObject.SetActive(false);
     }
 }
