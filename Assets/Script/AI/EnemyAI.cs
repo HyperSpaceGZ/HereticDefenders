@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
 
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        InvokeRepeating("EnemyFollowerMovement", 0, 0.01f);
+        InvokeRepeating("EnemyFollowerMovement", 0, 0.02f);
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
