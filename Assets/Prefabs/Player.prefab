@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1031765830893096544}
   - component: {fileID: 1031765830893096545}
   - component: {fileID: 1031765830893096558}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: TripleUp
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1031765830919752471}
   - component: {fileID: 1031765830919752468}
   - component: {fileID: 1031765830919752469}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: TripleRight
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 1031765831016562081}
   - component: {fileID: 1031765831016562094}
   - component: {fileID: 1031765831016562095}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CuadraLeft
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 1031765831699903186}
   - component: {fileID: 1031765831699903187}
   - component: {fileID: 1031765831699903184}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CuadraUp
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1031765831707899902}
   - component: {fileID: 1031765831707899900}
   - component: {fileID: 1031765831707899903}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 1031765831758593091}
   - component: {fileID: 1031765831758593092}
   - component: {fileID: 1031765831758593090}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1031765831792455017}
   - component: {fileID: 1031765831792454934}
   - component: {fileID: 1031765831792454935}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CuadraRight
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 1031765831800230565}
   - component: {fileID: 1031765831800230563}
   - component: {fileID: 1031765831800230562}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: DobbleRight
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 1031765832237281746}
   - component: {fileID: 1031765832237281744}
   - component: {fileID: 1031765832237281747}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: DobbleLeft
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -952,7 +952,7 @@ GameObject:
   - component: {fileID: 1031765832497996409}
   - component: {fileID: 1031765832497996390}
   - component: {fileID: 1031765832497996391}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CuadraDown
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -1039,7 +1039,7 @@ GameObject:
   - component: {fileID: 1031765832763092594}
   - component: {fileID: 1031765832763092595}
   - component: {fileID: 1031765832763092592}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: TripleLeft
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
