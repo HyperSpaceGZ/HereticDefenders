@@ -16,20 +16,21 @@ public class life : MonoBehaviour, Iplayerenemydmg
     private void Start()
     {
         currentLife = MaxLife;
-        currentArmor = MaxArmor;
-        
+        currentArmor = MaxArmor;  
     }
-   
-    public void PlayerDamage()
+
+    private void FixedUpdate()
     {
-        
+        UpdateUI();
+    }
+
+    public void PlayerDamage()
+    { 
         currentArmor = Mathf.Max(0, currentArmor - 1f);
         if(currentArmor == 0 )
         {
-            currentLife--;
-            
+            currentLife--;   
         }
-        UpdateUI();
     }
 
     public void UpdateUI()
