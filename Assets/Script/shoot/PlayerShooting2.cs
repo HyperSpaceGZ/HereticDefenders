@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShooting : MonoBehaviour
+public class PlayerShooting2 : MonoBehaviour
 {
     public PlayerInput playerInput;
 
     public Transform spawnposition;
-    public GameObject bulletprefab;
     public float force;
     public float lifetime  = 2f;
 
@@ -24,7 +23,8 @@ public class PlayerShooting : MonoBehaviour
 
     private void OnShoot(InputAction.CallbackContext context)
     {
-        GameObject bulletClone = ObjectPooling.SharedInstance.GetPooledObject(1);
+        GameObject bulletClone = ObjectPooling.SharedInstance.GetPooledObject(2);
+        
         if (bulletClone != null )
         {
             bulletClone.transform.position = spawnposition.position;
