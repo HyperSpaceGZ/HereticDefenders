@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 216004783}
-  - component: {fileID: 216004785}
   - component: {fileID: 216004784}
+  - component: {fileID: 216004785}
   m_Layer: 0
   m_Name: CuadraDown
   m_TagString: Untagged
@@ -203,12 +203,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 216004782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: 322fe65e7dc0dd9468ec918384dca0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 216004783}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &270238826
@@ -286,8 +285,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 478737572}
-  - component: {fileID: 478737574}
   - component: {fileID: 478737573}
+  - component: {fileID: 478737574}
   m_Layer: 0
   m_Name: TripleLeft
   m_TagString: Untagged
@@ -357,12 +356,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 478737571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: c4552d603d727c54f84d2908a512c38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 478737572}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &519420028
@@ -653,7 +651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1011952388}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1300823955
@@ -687,8 +684,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefabs:
   - {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
-  amountToPool: 10
-  amountsToPool: 00000000
+  - {fileID: 7598775773534033103, guid: 75c96fe3537e86848a88a5388efe5f2b, type: 3}
+  - {fileID: 9084030225552291806, guid: 541c36702dd4bbd41a4e3148bb3c0e80, type: 3}
+  amountToPool: 15
+  amountsToPool: 000000000000000000000000
 --- !u!4 &1300823957
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,7 +1045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1516554355}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1525528510
@@ -1058,8 +1056,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1525528511}
-  - component: {fileID: 1525528513}
   - component: {fileID: 1525528512}
+  - component: {fileID: 1525528513}
   m_Layer: 0
   m_Name: CuadraRight
   m_TagString: Untagged
@@ -1129,12 +1127,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1525528510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: 322fe65e7dc0dd9468ec918384dca0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1525528511}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1550444547
@@ -1146,8 +1143,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1550444548}
-  - component: {fileID: 1550444550}
   - component: {fileID: 1550444549}
+  - component: {fileID: 1550444550}
   m_Layer: 0
   m_Name: CuadraUp
   m_TagString: Untagged
@@ -1217,12 +1214,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1550444547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: 322fe65e7dc0dd9468ec918384dca0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1550444548}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1609035047
@@ -1310,7 +1306,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1609035048}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1687349110
@@ -1322,8 +1317,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687349111}
-  - component: {fileID: 1687349113}
   - component: {fileID: 1687349112}
+  - component: {fileID: 1687349113}
   m_Layer: 0
   m_Name: CuadraLeft
   m_TagString: Untagged
@@ -1393,12 +1388,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687349110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: 322fe65e7dc0dd9468ec918384dca0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1687349111}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1819710645
@@ -1410,8 +1404,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1819710646}
-  - component: {fileID: 1819710648}
   - component: {fileID: 1819710647}
+  - component: {fileID: 1819710648}
   m_Layer: 0
   m_Name: TripleUp
   m_TagString: Untagged
@@ -1481,12 +1475,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819710645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: c4552d603d727c54f84d2908a512c38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1819710646}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1 &1860817344
@@ -1498,8 +1491,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860817345}
-  - component: {fileID: 1860817347}
   - component: {fileID: 1860817346}
+  - component: {fileID: 1860817347}
   m_Layer: 0
   m_Name: TripleRight
   m_TagString: Untagged
@@ -1569,12 +1562,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1860817344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c255101167de7c449c8ee14fbd8931f, type: 3}
+  m_Script: {fileID: 11500000, guid: c4552d603d727c54f84d2908a512c38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
   spawnposition: {fileID: 1860817345}
-  bulletprefab: {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   force: 20
   lifetime: 2
 --- !u!1001 &4478398726106730407

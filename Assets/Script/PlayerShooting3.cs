@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerShooting : MonoBehaviour
+public class PlayerShooting3 : MonoBehaviour
 {
     public PlayerInput playerInput;
 
@@ -23,7 +23,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void OnShoot(InputAction.CallbackContext context)
     {
-        GameObject bulletClone = ObjectPooling.SharedInstance.GetPooledObject(1);
+        GameObject bulletClone = ObjectPooling.SharedInstance.GetPooledObject(3);
         
         if (bulletClone != null )
         {
