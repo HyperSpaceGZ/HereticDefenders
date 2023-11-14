@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour, Ienemydamage
 {
     [SerializeField] protected Transform PlayerTransform;
     [SerializeField] protected GameObject Player;
     [SerializeField] protected NavMeshAgent EnemyNavMesh;
     [SerializeField] protected bool hastriggered;
-
     [SerializeField] protected int health;
 
     protected virtual void Awake()
@@ -21,53 +20,25 @@ public class EnemyAI : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
-
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("bullet"))
+        if (collision.gameObject.GetComponent<Iplayerenemydmg>() != null)
         {
-            health--;
-            EnemyDeathCheck();
-        }
-        
-        if (hastriggered == false && collision.gameObject.tag == "bullet")
-        {
-            hastriggered = true;
-            InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
+            collision.gameObject.GetComponent<Iplayerenemydmg>().PlayerDamage();
         }
     }
-
-    public virtual void OnTriggerEnter2D(Collider2D collision)
+    public void EnemyDamage()
     {
-        Debug.Log("Trigger");
-        if (hastriggered == false && collision.gameObject.tag == "Player")
+        health--;
+        if (health <= 0)
         {
-            hastriggered = true;
-            InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
+            CancelInvoke("EnemyFollowerMovement");
+            Destroy(this.gameObject);
         }
     }
-
-    protected virtual void EnemyFollowerMovement()
+    public void EnemyTrigger()
     {
-        Vector2 direction = Player.transform.position - transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        EnemyNavMesh.SetDestination(PlayerTransform.position);
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-    }
-    protected virtual void EnemyDeathCheck()
-    {
-        if (health < 0)
-        {
-            KillEnemy();
-        }
-    }
-
-    protected virtual void KillEnemy()
-    {
-        CancelInvoke("EnemyFollowerMovement");
-        Destroy(this.gameObject);
+        hastriggered = true;
+        InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
     }
 }
