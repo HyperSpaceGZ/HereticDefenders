@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class life : MonoBehaviour
+public class life : MonoBehaviour, Iplayerenemydmg
 {
     public Image lifeBar;
     public Image armorBar;
