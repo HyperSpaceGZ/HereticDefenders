@@ -7,10 +7,6 @@ public class Bullet : MonoBehaviour
     public float lifeTime = 5.0f; 
     private float PassTime = 0.0f;
     public EnemyAI enemyAI;
-    public void Awake()
-    {
-        enemyAI = FindObjectOfType<EnemyAI>();
-    }
     void Update()
     {
         PassTime += Time.deltaTime; 
@@ -24,7 +20,6 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.GetComponent<Ienemydamage>() != null)
         {
             collision.gameObject.GetComponent<Ienemydamage>().EnemyDamage();
-            enemyAI.EnemyTrigger();
         }
         DestroyBullet();
     }

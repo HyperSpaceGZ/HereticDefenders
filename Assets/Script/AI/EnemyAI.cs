@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
 
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        InvokeRepeating("EnemyFollowerMovement", 0, 0.01f);
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
@@ -35,10 +36,5 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
             CancelInvoke("EnemyFollowerMovement");
             Destroy(this.gameObject);
         }
-    }
-    public void EnemyTrigger()
-    {
-        hastriggered = true;
-        InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
     }
 }

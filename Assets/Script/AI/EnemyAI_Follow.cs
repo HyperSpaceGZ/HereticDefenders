@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class EnemyAI_Follow : EnemyAI
 {
-    public virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (hastriggered == false && collision.gameObject.tag == "Player")
-        {
-            EnemyTrigger();
-        }
-    }
     protected virtual void EnemyFollowerMovement()
     {
         Vector2 direction = Player.transform.position - transform.position;
