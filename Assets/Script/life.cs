@@ -15,8 +15,17 @@ public class life : MonoBehaviour, Iplayerenemydmg
 
     private void Start()
     {
-        currentLife = MaxLife;
-        currentArmor = MaxArmor;  
+        if (!PlayerPrefs.HasKey("GameStarted"))
+        {
+            PlayerPrefs.SetInt("GameStarted", 1);
+            ResetValues();
+        }
+        else
+        {
+            currentLife = PlayerPrefs.GetFloat("SavedLife", MaxLife);
+            currentArmor = PlayerPrefs.GetFloat("SavedArmor", MaxArmor);
+        }
+         
     }
 
     private void FixedUpdate()
@@ -37,6 +46,19 @@ public class life : MonoBehaviour, Iplayerenemydmg
     {
         lifeBar.fillAmount = currentLife / MaxLife;
         armorBar.fillAmount = currentArmor / MaxArmor;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetFloat("SavedLife", currentLife);
+        PlayerPrefs.SetFloat("SavedArmor", currentArmor);
+        PlayerPrefs.Save();
+    }
+
+    private void ResetValues()
+    {
+        currentLife = MaxLife;
+        currentArmor = MaxArmor;
     }
 
 }
