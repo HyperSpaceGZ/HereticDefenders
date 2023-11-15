@@ -784,7 +784,7 @@ MonoBehaviour:
   - {fileID: 3927092036318773192, guid: 437aabd3083222d42989ac1526ae91f7, type: 3}
   - {fileID: 7598775773534033103, guid: 75c96fe3537e86848a88a5388efe5f2b, type: 3}
   - {fileID: 9084030225552291806, guid: 541c36702dd4bbd41a4e3148bb3c0e80, type: 3}
-  amountToPool: 15
+  amountToPool: 3
   amountsToPool: 000000000000000000000000
 --- !u!4 &1300823957
 Transform:

@@ -14,6 +14,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private float TimeToNextCreation;
     private float[] TimesForSpawners;
+    private int EnemysCount = 0;
 
 
     private void Start()
@@ -45,6 +46,11 @@ public class EnemyGenerator : MonoBehaviour
             int RandomEnemy = Random.Range(0, enemys.Length);
             Instantiate(enemys[RandomEnemy], spawnPoints[RandomSpawner].position, Quaternion.identity);
             TimesForSpawners[RandomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
+            EnemysCount++;
+            if (EnemysCount >= TotalEnemys)
+            {
+                enabled = false;
+            }
         }
         
         
