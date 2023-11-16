@@ -11,6 +11,9 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
     [SerializeField] protected bool hastriggered;
     [SerializeField] protected int health;
 
+    public delegate void KillEvent();
+    public static KillEvent killevent;
+
     protected virtual void Awake()
     {
         EnemyNavMesh = GetComponent<NavMeshAgent>();
@@ -34,6 +37,7 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
         if (health <= 0)
         {
             CancelInvoke("EnemyFollowerMovement");
+            killevent?.Invoke();
             Destroy(this.gameObject);
         }
     }

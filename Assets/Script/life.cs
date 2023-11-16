@@ -25,7 +25,6 @@ public class life : MonoBehaviour, Iplayerenemydmg
             currentLife = PlayerPrefs.GetFloat("SavedLife", MaxLife);
             currentArmor = PlayerPrefs.GetFloat("SavedArmor", MaxArmor);
         }
-         
     }
 
     private void FixedUpdate()
@@ -34,11 +33,11 @@ public class life : MonoBehaviour, Iplayerenemydmg
     }
 
     public void PlayerDamage()
-    { 
+    {
         currentArmor = Mathf.Max(0, currentArmor - 1f);
-        if(currentArmor == 0 )
+        if (currentArmor == 0)
         {
-            currentLife--;   
+            currentLife--;
         }
     }
 
@@ -60,5 +59,24 @@ public class life : MonoBehaviour, Iplayerenemydmg
         currentLife = MaxLife;
         currentArmor = MaxArmor;
     }
+
+    public void Heal()
+    {
+        if(currentLife < MaxLife)
+        {
+            currentLife = MaxLife;
+        }
+    }
+
+    public void AddArmor() 
+    {
+        if (currentArmor < MaxArmor)
+        {
+            currentArmor = MaxArmor;
+        }
+    }
+      
+
+
 
 }
