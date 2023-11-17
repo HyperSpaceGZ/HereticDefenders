@@ -10,22 +10,14 @@ public class ConeShoot : ClassPowerUp
     public GameObject CannonMid;
     
     public override void Activate()
-    {
-       
-        
-            mainCannon.SetActive(false);
-            CannonRight.SetActive(true);
-            CannonLeft.SetActive(true);
-            CannonMid.SetActive(true);
-        
-       
-
+    {      
+        mainCannon.SetActive(false);
+        CannonRight.SetActive(true);
+        CannonLeft.SetActive(true);
+        CannonMid.SetActive(true);
     }
     public override void Deactivate()
     {
-        
-        
-            gameObject.SetActive(false);
-        
+        gameObject.SetActive(false);
     }
 }
