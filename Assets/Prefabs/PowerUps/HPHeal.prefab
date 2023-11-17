@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 658670160505328492}
   - component: {fileID: 658670160505328495}
   - component: {fileID: 658670160505328493}
-  - component: {fileID: 9196139892135547487}
+  - component: {fileID: 5130966884671555547}
   m_Layer: 0
   m_Name: HPHeal
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9196139892135547487
+--- !u!114 &5130966884671555547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 658670160505328494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175a66fb3c8f90b4c9105f1111d0e7fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 043a0f6411211e148a0a6df4793bda40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Life: {fileID: 0}
