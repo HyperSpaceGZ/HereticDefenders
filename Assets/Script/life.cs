@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class life : MonoBehaviour, Iplayerenemydmg
 {
@@ -15,17 +17,10 @@ public class life : MonoBehaviour, Iplayerenemydmg
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("GameStarted"))
-        {
-            PlayerPrefs.SetInt("GameStarted", 1);
-            ResetValues();
-        }
-        else
-        {
-            currentLife = PlayerPrefs.GetFloat("SavedLife", MaxLife);
-            currentArmor = PlayerPrefs.GetFloat("SavedArmor", MaxArmor);
-        }
-         
+       
+       currentLife = PlayerPrefs.GetFloat("SavedLife", MaxLife);
+       currentArmor = PlayerPrefs.GetFloat("SavedArmor", MaxArmor);
+           
     }
 
     private void FixedUpdate()
@@ -38,7 +33,12 @@ public class life : MonoBehaviour, Iplayerenemydmg
         currentArmor = Mathf.Max(0, currentArmor - 1f);
         if(currentArmor == 0 )
         {
-            currentLife--;   
+            currentLife--;
+            
+            if(currentLife <= 0)
+            {
+                EndGame();
+            }
         }
     }
 
@@ -48,17 +48,16 @@ public class life : MonoBehaviour, Iplayerenemydmg
         armorBar.fillAmount = currentArmor / MaxArmor;
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         PlayerPrefs.SetFloat("SavedLife", currentLife);
         PlayerPrefs.SetFloat("SavedArmor", currentArmor);
         PlayerPrefs.Save();
     }
 
-    private void ResetValues()
+    public void EndGame()
     {
-        currentLife = MaxLife;
-        currentArmor = MaxArmor;
+        SceneManager.LoadScene(4);
     }
 
 }
