@@ -9,6 +9,7 @@ public class CuadraShoot : ClassPowerUp
     public GameObject CannonLeft;
     public GameObject CannonUp;
     public GameObject CannonDown;
+    
     public override void Activate()
     {
         mainCannon.SetActive(false);
@@ -16,5 +17,11 @@ public class CuadraShoot : ClassPowerUp
         CannonLeft.SetActive(true);
         CannonUp.SetActive(true);
         CannonDown.SetActive(true);
+    }
+
+    public override void Deactivate()
+    {
+       gameObject.SetActive(false);
+        
     }
 }

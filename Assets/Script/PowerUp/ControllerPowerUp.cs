@@ -14,10 +14,17 @@ public class ControllerPowerUp : MonoBehaviour
             if (powerUp != null )
             {
                 powerUp.Activate();
-                Destroy(other.gameObject);
+                DeactivateAllPowerUps();
             }
-
-
+        }
+    }
+    void DeactivateAllPowerUps()
+    {
+        ClassPowerUp[] powerUps = FindObjectsOfType<ClassPowerUp>();
+        foreach (ClassPowerUp powerUp in powerUps)
+        {
+            powerUp.Deactivate();
+            Destroy(powerUp.gameObject);
         }
     }
 }
