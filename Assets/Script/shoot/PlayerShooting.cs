@@ -35,7 +35,6 @@ public class PlayerShooting : MonoBehaviour
             Rigidbody2D rb = bulletClone.GetComponent<Rigidbody2D>();
             rb.AddRelativeForce(Vector3.up * force, ForceMode2D.Impulse);
 
-            Debug.Log("SHOOT");
         }
         
     }
