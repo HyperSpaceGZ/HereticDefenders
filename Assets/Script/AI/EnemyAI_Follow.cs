@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EnemyAI_Follow : EnemyAI
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        InvokeRepeating("EnemyFollowerMovement", 0, 0.02f);
+    }
+
     protected virtual void EnemyFollowerMovement()
     {
         Vector2 direction = Player.transform.position - transform.position;
