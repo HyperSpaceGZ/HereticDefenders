@@ -53,8 +53,5 @@ public class EnemyGenerator : MonoBehaviour
                 enabled = false;
             }
         }
-        
-        
     }
-
 }

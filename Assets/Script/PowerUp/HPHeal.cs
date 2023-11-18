@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPHeal : MonoBehaviour
+public class HPHeal : ClassPowerUp
 {
     public life Life;
     
@@ -14,6 +14,16 @@ public class HPHeal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Life.Heal();
-        Destroy(this.gameObject);
+        Deactivate();
+    }
+
+    public override void Activate()
+    {
+        Debug.Log("hp");
+    }
+
+    public override void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

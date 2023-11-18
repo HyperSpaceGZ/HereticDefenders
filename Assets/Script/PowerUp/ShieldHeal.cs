@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldHeal : MonoBehaviour
+public class ShieldHeal : ClassPowerUp
 {
     public life Life;
 
@@ -14,6 +14,16 @@ public class ShieldHeal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Life.AddArmor();
-        Destroy(this.gameObject);
+        Deactivate();
+    }
+
+    public override void Activate()
+    {
+        Debug.Log("shield");
+    }
+
+    public override void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

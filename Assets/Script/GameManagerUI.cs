@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManagerUI : MonoBehaviour
 {
     [SerializeField] private int Kills;
     [SerializeField] private int MaxKills;
+    [SerializeField] private TMP_Text EnemyCountTMP;
+    [SerializeField] private GameObject WinPanel;
     public EnemyGenerator enemyGenerator;
 
     private void Awake()
@@ -14,12 +18,19 @@ public class GameManagerUI : MonoBehaviour
         MaxKills = enemyGenerator.TotalEnemys;
     }
 
+    private void FixedUpdate()
+    {
+        EnemyCountTMP.text = "Enemies: "+Kills+"/"+MaxKills;
+    }
+
     private void AddKill()
     {
         Kills++;
         if(Kills == MaxKills)
         {
             Debug.Log("You Win!");
+            WinPanel.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
