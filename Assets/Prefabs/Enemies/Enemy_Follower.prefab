@@ -75,6 +75,7 @@ MonoBehaviour:
   EnemyNavMesh: {fileID: 0}
   hastriggered: 0
   health: 8
+  animator: {fileID: 0}
 --- !u!61 &6534561364673381525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6534561365395355078}
   - component: {fileID: 6534561365395355077}
+  - component: {fileID: 3653370793505452454}
   m_Layer: 15
   m_Name: Square
   m_TagString: Untagged
@@ -201,3 +203,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3653370793505452454
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534561365395355079}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f242f18c5050b1b459e511c7f492a1f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

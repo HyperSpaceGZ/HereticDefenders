@@ -73823,7 +73823,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4308947110296908819, guid: 69067d3e8f5849042bbd0edf2347a3ef, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308947110296908819, guid: 69067d3e8f5849042bbd0edf2347a3ef, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4308947110296908819, guid: 69067d3e8f5849042bbd0edf2347a3ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 69067d3e8f5849042bbd0edf2347a3ef, type: 3}
 --- !u!1001 &1653090854902218901
 PrefabInstance:

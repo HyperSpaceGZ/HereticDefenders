@@ -28,9 +28,7 @@ public class GameManagerUI : MonoBehaviour
         Kills++;
         if(Kills == MaxKills)
         {
-            Debug.Log("You Win!");
-            WinPanel.SetActive(true);
-            Time.timeScale = 0;
+            Invoke("Win", 2);
         }
     }
 
@@ -41,5 +39,12 @@ public class GameManagerUI : MonoBehaviour
     private void OnDisable()
     {
         EnemyAI.killevent -= AddKill;
+    }
+
+    private void Win()
+    {
+        Debug.Log("You Win!");
+        WinPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }

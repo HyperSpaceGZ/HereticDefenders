@@ -11,6 +11,9 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
     [SerializeField] protected bool hastriggered;
     [SerializeField] protected int health;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private BoxCollider2D collider2D;
+
     public delegate void KillEvent();
     public static KillEvent killevent;
 
@@ -19,6 +22,9 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
         EnemyNavMesh = GetComponent<NavMeshAgent>();
         EnemyNavMesh.updateRotation = false;
         EnemyNavMesh.updateUpAxis = false;
+
+        animator = transform.GetChild(0).GetComponent<Animator>();
+        collider2D = GetComponent<BoxCollider2D>();
 
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -36,9 +42,17 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
         health--;
         if (health <= 0)
         {
-            CancelInvoke("EnemyFollowerMovement");
-            killevent?.Invoke();
-            Destroy(this.gameObject);
+            EnemyDeath();
         }
+    }
+
+    protected virtual void EnemyDeath()
+    {
+        CancelInvoke("EnemyFollowerMovement");
+        EnemyNavMesh.ResetPath();
+        collider2D.enabled = false;
+        killevent?.Invoke();
+        animator.SetBool("IsDead", true);
+        Destroy(this.gameObject, 0.35f);
     }
 }

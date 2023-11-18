@@ -13,4 +13,13 @@ public class EnemyAI_Follow : EnemyAI
         EnemyNavMesh.SetDestination(PlayerTransform.position);
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
     }
+
+    public override void OnCollisionEnter2D(Collision2D collision)
+    {
+        base.OnCollisionEnter2D(collision);
+        if (collision.gameObject.GetComponent<Iplayerenemydmg>() != null)
+        {
+            EnemyDeath();
+        }
+    }
 }
