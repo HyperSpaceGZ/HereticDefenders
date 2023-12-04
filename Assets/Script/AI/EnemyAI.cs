@@ -44,7 +44,6 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
             EnemyDeath();
         }
     }
-
     protected virtual void EnemyDeath()
     {
         CancelInvoke("EnemyFollowerMovement");

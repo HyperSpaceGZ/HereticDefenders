@@ -18460,12 +18460,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemys:
   - {fileID: 6534561364673381527, guid: de8a649a4f0136249b894f26546d44d8, type: 3}
+  - {fileID: 6795313664152579044, guid: fb23831af44c814489543f7f94d05f7a, type: 3}
   spawnPoints:
   - {fileID: 270238827}
   - {fileID: 1408133505}
   - {fileID: 797303327}
   - {fileID: 536006391}
-  TotalEnemys: 10
+  TotalEnemys: 30
   TimeMinCreation: 1
   TimeMaxCreation: 3
 --- !u!4 &607969608

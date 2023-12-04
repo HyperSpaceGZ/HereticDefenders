@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
             DestroyBullet();
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<Ienemydamage>() != null)
         {
@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
         }
         DestroyBullet();
     }
-    private void DestroyBullet()
+    protected void DestroyBullet()
     {
         PassTime = 0.0f;
         gameObject.SetActive(false);
