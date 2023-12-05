@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    public GameObject[] enemys;
+    public EnemyFactory enemyFactory;
     public Transform[] spawnPoints;
 
     public int TotalEnemys = 20;
@@ -41,12 +41,12 @@ public class EnemyGenerator : MonoBehaviour
 
     void CreateEnemys()
     {
-        int RandomSpawner = Random.Range(0, spawnPoints.Length);
-        if (Time.time >= TimesForSpawners[RandomSpawner])
+        int randomSpawner = Random.Range(0, spawnPoints.Length);
+        if (Time.time >= TimesForSpawners[randomSpawner])
         {
-            int RandomEnemy = Random.Range(0, enemys.Length);
-            Instantiate(enemys[RandomEnemy], spawnPoints[RandomSpawner].position, Quaternion.identity);
-            TimesForSpawners[RandomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
+            GameObject enemy = enemyFactory.CreateEnemy(spawnPoints[randomSpawner].position);
+
+            TimesForSpawners[randomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
             EnemysCount++;
             if (EnemysCount >= TotalEnemys)
             {
