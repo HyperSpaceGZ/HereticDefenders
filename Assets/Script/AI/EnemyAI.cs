@@ -13,6 +13,9 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
 
     [SerializeField] private Animator animator;
     [SerializeField] private BoxCollider2D collider2D;
+    [SerializeField] private Material WhiteFlash;
+    [SerializeField] private Material DefMaterial;
+    [SerializeField] SpriteRenderer sr;
 
     public delegate void KillEvent();
     public static KillEvent killevent;
@@ -24,10 +27,14 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
         EnemyNavMesh.updateUpAxis = false;
 
         animator = transform.GetChild(0).GetComponent<Animator>();
+        sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
         collider2D = GetComponent<BoxCollider2D>();
 
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        WhiteFlash = Resources.Load("WhiteFlash", typeof(Material)) as Material;
+        DefMaterial = sr.material;
     }
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,13 +46,25 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
     public void EnemyDamage()
     {
         health--;
+        sr.material = WhiteFlash;
         if (health <= 0)
         {
             EnemyDeath();
         }
+        else
+        {
+            Invoke("ResetMaterial", 0.1f);
+        }
     }
+
+    void ResetMaterial()
+    {
+        sr.material = DefMaterial;
+    }
+
     protected virtual void EnemyDeath()
     {
+        ResetMaterial();
         CancelInvoke("EnemyFollowerMovement");
         EnemyNavMesh.ResetPath();
         collider2D.enabled = false;
