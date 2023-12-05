@@ -18354,7 +18354,7 @@ MonoBehaviour:
   - {fileID: 1408133505}
   - {fileID: 797303327}
   - {fileID: 536006391}
-  TotalEnemys: 20
+  TotalEnemys: 40
   TimeMinCreation: 1
   TimeMaxCreation: 3
 --- !u!4 &607969608

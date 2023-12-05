@@ -41,17 +41,21 @@ public class EnemyGenerator : MonoBehaviour
 
     void CreateEnemys()
     {
-        int randomSpawner = Random.Range(0, spawnPoints.Length);
-        if (Time.time >= TimesForSpawners[randomSpawner])
+        if (EnemysCount < TotalEnemys)
         {
-            GameObject enemy = enemyFactory.CreateEnemy(spawnPoints[randomSpawner].position);
-
-            TimesForSpawners[randomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
-            EnemysCount++;
-            if (EnemysCount >= TotalEnemys)
+            int randomSpawner = Random.Range(0, spawnPoints.Length);
+            if (Time.time >= TimesForSpawners[randomSpawner])
             {
-                enabled = false;
+                GameObject enemy = enemyFactory.CreateEnemy(spawnPoints[randomSpawner].position);
+
+                TimesForSpawners[randomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
+                EnemysCount++;
+                if (EnemysCount >= TotalEnemys)
+                {
+                    enabled = false;
+                }
             }
         }
+        
     }
 }
