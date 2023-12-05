@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class life : MonoBehaviour, Iplayerenemydmg
 {
     public Image lifeBar;
@@ -15,10 +14,21 @@ public class life : MonoBehaviour, Iplayerenemydmg
     public float MaxArmor = 5f;
     public float currentArmor;
 
+    public Material RedFlash;
+    public Material BlueFlash;
+    public Material DefMaterial;
+    public SpriteRenderer sr;
+
     private void Start()
     {
        currentLife = PlayerPrefs.GetFloat("SavedLife", MaxLife);
-       currentArmor = PlayerPrefs.GetFloat("SavedArmor", MaxArmor);  
+       currentArmor = PlayerPrefs.GetFloat("SavedArmor", MaxArmor);
+
+        sr = GetComponent<SpriteRenderer>();
+
+        RedFlash = Resources.Load("RedFlash", typeof(Material)) as Material;
+        BlueFlash = Resources.Load("BlueFlash", typeof(Material)) as Material;
+        DefMaterial = sr.material;
     }
 
     private void FixedUpdate()
@@ -29,15 +39,29 @@ public class life : MonoBehaviour, Iplayerenemydmg
     public void PlayerDamage()
     { 
         currentArmor = Mathf.Max(0, currentArmor - 1f);
-        if(currentArmor == 0 )
+        sr.material = BlueFlash;
+        if (currentArmor == 0 )
         {
             currentLife--;
-            
-            if(currentLife <= 0)
+            sr.material = RedFlash;
+            if (currentLife <= 0)
             {
                 EndGame();
             }
+            else
+            {
+                Invoke("ResetMaterial", 0.1f);
+            }
         }
+        else
+        {
+            Invoke("ResetMaterial", 0.1f);
+        }
+
+    }
+    void ResetMaterial()
+    {
+        sr.material = DefMaterial;
     }
 
     public void UpdateUI()
@@ -73,5 +97,4 @@ public class life : MonoBehaviour, Iplayerenemydmg
     {
         SceneManager.LoadScene(4);
     }
-
 }
