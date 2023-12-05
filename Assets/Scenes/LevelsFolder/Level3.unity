@@ -18446,6 +18446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815311513}
   - component: {fileID: 815311512}
+  - component: {fileID: 815311514}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -18485,6 +18486,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815311514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815311511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b665b280ed242d4db3fe6b34651befe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &839420783
 GameObject:
   m_ObjectHideFlags: 0
@@ -74244,6 +74257,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4710567365408113470, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 815311514}
+    - target: {fileID: 4710567365408113470, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710567365408113470, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttomsM, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710567365408113470, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362791643480749180, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5406989495820166704, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -74331,6 +74364,34 @@ PrefabInstance:
     - target: {fileID: 5406989495820166708, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 815311514}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttomsM, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663329397252505104, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}
