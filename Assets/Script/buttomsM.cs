@@ -39,4 +39,10 @@ public class buttomsM : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
+
+    public void Options()
+    {
+        SceneManager.LoadScene("options");
+        Time.timeScale = 1;
+    }
 }
