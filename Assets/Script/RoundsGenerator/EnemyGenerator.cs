@@ -15,14 +15,15 @@ public class EnemyGenerator : MonoBehaviour
 
     private float TimeToNextCreation;
     private float[] TimesForSpawners;
-    
+    private int EnemysCount = 0;
+
 
     private void Start()
     {
         TimesForSpawners = new float[spawnPoints.Length];
         TimeToNextCreation = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
 
-        for(int i = 0; i < spawnPoints.Length; i++)
+        for (int i = 0; i < spawnPoints.Length; i++)
         {
             TimesForSpawners[i] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
         }
@@ -30,7 +31,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Update()
     {
-        if(Time.time >= TimeToNextCreation)
+        if (Time.time >= TimeToNextCreation)
         {
             CreateEnemys();
             TimeToNextCreation = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
@@ -40,14 +41,30 @@ public class EnemyGenerator : MonoBehaviour
 
     void CreateEnemys()
     {
-        int randomSpawner = Random.Range(0, spawnPoints.Length);
-        if (Time.time >= TimesForSpawners[randomSpawner])
+        if (EnemysCount < TotalEnemys)
         {
-            
-            GameObject enemy = enemyFactory.CreateEnemy(spawnPoints[randomSpawner].position);
+            int randomSpawner = Random.Range(0, spawnPoints.Length);
+            if (Time.time >= TimesForSpawners[randomSpawner])
+            {
+                GameObject enemy = enemyFactory.CreateEnemy(spawnPoints[randomSpawner].position);
 
-            TimesForSpawners[randomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
+                TimesForSpawners[randomSpawner] = Time.time + Random.Range(TimeMinCreation, TimeMaxCreation);
+                EnemysCount++;
+                if (EnemysCount >= TotalEnemys)
+                {
+                    DestroySpawnPoints();
+                    enabled = false;
+                }
+            }
         }
 
+    }
+
+    void DestroySpawnPoints()
+    {
+        foreach (Transform spawnPoint in spawnPoints)
+        {
+            Destroy(spawnPoint.gameObject);
+        }
     }
 }
