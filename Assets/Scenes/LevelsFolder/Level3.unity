@@ -537,6 +537,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -645,6 +646,27 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!50 &519420034
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &536006390
 GameObject:
   m_ObjectHideFlags: 0
@@ -18388,6 +18410,7 @@ MonoBehaviour:
   - {fileID: 6534561364673381527, guid: de8a649a4f0136249b894f26546d44d8, type: 3}
   - {fileID: 6795313664152579044, guid: fb23831af44c814489543f7f94d05f7a, type: 3}
   - {fileID: 5216403510379842013, guid: 18ec6f72364eaa0429d982e7a029534b, type: 3}
+  - {fileID: 1669567311582075888, guid: ba1c90b56f3741e4392aec332b0b925e, type: 3}
 --- !u!114 &655136861 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6348769066895308078, guid: bc86a8cebd44b0c478cbfa6e6f364b34, type: 3}

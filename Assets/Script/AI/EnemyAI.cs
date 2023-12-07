@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
     [SerializeField] private Material WhiteFlash;
     [SerializeField] private Material DefMaterial;
     [SerializeField] SpriteRenderer sr;
+    [SerializeField] AudioSource deathsound;
 
     public delegate void KillEvent();
     public static KillEvent killevent;
@@ -28,6 +29,7 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
 
         animator = transform.GetChild(0).GetComponent<Animator>();
         sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        deathsound = GetComponent<AudioSource>();
         enemycollider2D = GetComponent<BoxCollider2D>();
 
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -70,6 +72,7 @@ public class EnemyAI : MonoBehaviour, Ienemydamage
         enemycollider2D.enabled = false;
         killevent?.Invoke();
         animator.SetBool("IsDead", true);
+        deathsound.Play();
         Destroy(this.gameObject, 0.35f);
     }
 }

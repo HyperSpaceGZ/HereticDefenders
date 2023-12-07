@@ -17,6 +17,13 @@ public class PlayerDebuff : MonoBehaviour, Ienemyslowness
         Debug.Log("slowness");
     }
 
+    public void SlownessBerserk()
+    {
+        PlayerMovement.speed = 3;
+        Invoke("ResetSlowness", 2.5f);
+        Debug.Log("slowness2");
+    }
+
     public void ResetSlowness()
     {
         PlayerMovement.speed = 10;
