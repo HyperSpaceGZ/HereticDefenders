@@ -18498,7 +18498,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 6534561364673381527, guid: de8a649a4f0136249b894f26546d44d8, type: 3}
   - {fileID: 6795313664152579044, guid: fb23831af44c814489543f7f94d05f7a, type: 3}
-  TotalEnemysToCreate: 29
+  TotalEnemysToCreate: 30
 --- !u!1 &797303326
 GameObject:
   m_ObjectHideFlags: 0
