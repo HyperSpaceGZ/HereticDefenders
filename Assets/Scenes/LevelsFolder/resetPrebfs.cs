@@ -6,6 +6,7 @@ public class resetPrebfs : MonoBehaviour
 {
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("SavedLife");
+        PlayerPrefs.DeleteKey("SavedArmor");
     }
 }

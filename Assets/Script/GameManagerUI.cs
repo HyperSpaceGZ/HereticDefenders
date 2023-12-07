@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManagerUI : MonoBehaviour
@@ -21,6 +22,14 @@ public class GameManagerUI : MonoBehaviour
     private void FixedUpdate()
     {
         EnemyCountTMP.text = "Enemies: "+Kills+"/"+MaxKills;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("menu");
+        }
     }
 
     private void AddKill()
